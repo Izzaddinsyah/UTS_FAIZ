@@ -8,13 +8,16 @@ import com.example.uts_map_lab.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class SignupActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivitySignupBinding
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         firebaseAuth = FirebaseAuth.getInstance()
+
         binding.signupButton.setOnClickListener{
             val email = binding.signupEmail.text.toString()
             val password = binding.signupPassword.text.toString()
